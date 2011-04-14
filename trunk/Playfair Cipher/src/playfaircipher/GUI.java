@@ -31,11 +31,11 @@ public class GUI extends GBFrame {
     private JButton decryptBtn;
     private final Font STD_FONT = new Font(Font.MONOSPACED, Font.PLAIN, 12);
     private final Font BOLD_FONT = new Font(Font.MONOSPACED, Font.BOLD, 12);
+    //creates a square with a key. feel free to remove... FOR TESTING
+    //PURPOSES
+    private PolybusSq theSquare = new PolybusSq(/*"you goddamn motherfucking fuckng cunt?!"*/);
 
     public GUI() {
-        //creates a square with a key. feel free to remove... FOR TESTING
-        //PURPOSES
-        PolybusSq theSquare = new PolybusSq(/*"you goddamn motherfucking fuckng cunt?!"*/);
         //this will hold *decrypted* text.
         decryptedArea = addTextArea("", 1, 1, 1, 3);
         //formatting
@@ -69,7 +69,9 @@ public class GUI extends GBFrame {
     @Override
     public void buttonClicked(JButton jb) {
         if (jb == encryptBtn) {
-            //TODO: set the key
+            theSquare.reset();
+            theSquare.setKey(getKey());
+            square.setText(theSquare.print());
             //TODO: encrypt the message
             //TODO: display ciphertext
         } else if (jb == decryptBtn) {
