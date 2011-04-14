@@ -7,6 +7,7 @@ package playfaircipher;
 import BreezySwing.GBFrame;
 import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 /*
@@ -71,6 +72,14 @@ public class GUI extends GBFrame {
             //TODO: set the key
             //TODO: encrypt the message
             //TODO: display ciphertext
+        } else if (jb == decryptBtn) {
+            //TODO: set the key
+            //TODO: decrypt the message
+            //TODO: display cleartext
         }
+    }
+
+    private String getKey() {
+        return JOptionPane.showInputDialog(rootPane, "Input the message key:");
     }
 }
