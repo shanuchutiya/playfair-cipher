@@ -63,6 +63,10 @@ public class PolybusSq {
         setKey(key);
     }
 
+    /**
+     *
+     * @param key
+     */
     public void setKey(String key) {
         this.key = removeWhitespace(key.toUpperCase());
         square.add(new ArrayList<Integer>(7));
@@ -172,6 +176,12 @@ public class PolybusSq {
             }
         }
         return noWhite;
+    }
+
+    public void reset() {
+        square.clear();
+        this.x = 0;
+        this.y = 0;
     }
 
     /**
