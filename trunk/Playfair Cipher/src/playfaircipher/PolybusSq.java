@@ -17,6 +17,13 @@ public class PolybusSq {
     private int y;
     private int x;
 
+    /*
+     * Make this a static class?
+     * Pro: no constructors, less memory, easier access...
+     *  (use PolybusSq.square instead of PolybusSq x = new PloybusSq())
+     * Con: We have to change it.
+     * Meh, fuck it. may as well, no harm right?
+     */
     /**
      * A B C D E
      * F G H I K
@@ -53,6 +60,10 @@ public class PolybusSq {
         square = new ArrayList<ArrayList<Integer>>(7);
         this.y = 0;
         this.x = 0;
+        setKey(key);
+    }
+
+    public void setKey(String key) {
         this.key = removeWhitespace(key.toUpperCase());
         square.add(new ArrayList<Integer>(7));
         for (int z = 0; z < this.key.length(); z++) {
