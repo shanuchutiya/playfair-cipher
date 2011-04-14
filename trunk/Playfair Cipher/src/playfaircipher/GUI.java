@@ -34,7 +34,7 @@ public class GUI extends GBFrame {
     public GUI() {
         //creates a square with a key. feel free to remove... FOR TESTING
         //PURPOSES
-        PolybusSq theSquare = new PolybusSq("you goddamn motherfucking fuckng cunt?!");
+        PolybusSq theSquare = new PolybusSq(/*"you goddamn motherfucking fuckng cunt?!"*/);
         //this will hold *decrypted* text.
         decryptedArea = addTextArea("", 1, 1, 1, 3);
         //formatting

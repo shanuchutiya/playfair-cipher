@@ -42,7 +42,7 @@ public class PolybusSq {
         this.y = 0;
         this.x = 0;
         square.add(new ArrayList<Integer>(7));
-        completeSquare(y, x);
+        completeSquare();
     }
 
     /**
@@ -75,7 +75,7 @@ public class PolybusSq {
                 z--;
             }
         }
-        completeSquare(y, x);
+        completeSquare();
     }
 
     /**
@@ -83,7 +83,7 @@ public class PolybusSq {
      * @param y
      * @param x
      */
-    private void completeSquare(int y, int x) {
+    private void completeSquare() {
         int codePoint = 65;
         while (this.y < 7) {
             boolean contains = false;
