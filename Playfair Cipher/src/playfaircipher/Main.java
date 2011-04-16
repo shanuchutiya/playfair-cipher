@@ -4,6 +4,7 @@
  */
 package playfaircipher;
 
+import java.util.ArrayList;
 
 /**
  * FOR HELP::http://www.ssec.wisc.edu/~tomw/java/unicode.html#x0000
