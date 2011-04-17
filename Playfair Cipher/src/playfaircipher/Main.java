@@ -2,6 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+// test that it worked
 package playfaircipher;
 
 import java.util.ArrayList;
