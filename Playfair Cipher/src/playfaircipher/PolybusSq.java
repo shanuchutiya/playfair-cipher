@@ -13,9 +13,9 @@ import java.util.ArrayList;
 public class PolybusSq {
 
     static ArrayList<ArrayList<Integer>> square;
-    private String key;
-    private int y;
-    private int x;
+    private static String key;
+    private static int y;
+    private static int x;
 
     /*
      * Make this a static class?
@@ -44,10 +44,10 @@ public class PolybusSq {
      * 6 . / 0 1 2 3 4
      * 7 5 6 7 8 9 = ?
      */
-    public PolybusSq() {
+    static void PolybusSq() {
         square = new ArrayList<ArrayList<Integer>>(7);
-        this.y = 0;
-        this.x = 0;
+        y = 0;
+        x = 0;
         square.add(new ArrayList<Integer>(7));
         completeSquare();
     }
@@ -56,10 +56,10 @@ public class PolybusSq {
      *
      * @param key
      */
-    public PolybusSq(String key) {
+    static void PolybusSq(String key) {
         square = new ArrayList<ArrayList<Integer>>(7);
-        this.y = 0;
-        this.x = 0;
+        y = 0;
+        x = 0;
         setKey(key);
     }
 
@@ -67,26 +67,26 @@ public class PolybusSq {
      *
      * @param key
      */
-    public void setKey(String key) {
-        this.key = removeWhitespace(key.toUpperCase());
+    static void setKey(String key) {
+        key = removeWhitespace(key.toUpperCase());
         square.add(new ArrayList<Integer>(7));
-        for (int z = 0; z < this.key.length(); z++) {
+        for (int z = 0; z < key.length(); z++) {
             boolean contains = false;
             for (ArrayList<Integer> ints : square) {
-                if (ints.contains(new Integer(this.key.charAt(z)))) {
+                if (ints.contains(new Integer(key.charAt(z)))) {
                     contains = true;
                 }
             }
             if (contains) {
                 continue;
             }
-            if (this.x < 7) {
-                square.get(y).add(new Integer(this.key.charAt(z)));
-                this.x++;
+            if (x < 7) {
+                square.get(y).add(new Integer(key.charAt(z)));
+                x++;
             } else {
                 square.add(new ArrayList<Integer>(7));
-                this.y++;
-                this.x = 0;
+                y++;
+                x = 0;
                 z--;
             }
         }
@@ -98,9 +98,9 @@ public class PolybusSq {
      * @param y
      * @param x
      */
-    private void completeSquare() {
+    private static void completeSquare() {
         int codePoint = 65;
-        while (this.y < 7) {
+        while (y < 7) {
             boolean contains = false;
             if (codePoint > 90) {
                 codePoint = 33;
@@ -124,13 +124,13 @@ public class PolybusSq {
                 codePoint++;
                 continue;
             }
-            if (this.x < 7) {
-                square.get(this.y).add(new Integer(codePoint));
-                this.x++;
+            if (x < 7) {
+                square.get(y).add(new Integer(codePoint));
+                x++;
             } else {
                 square.add(new ArrayList<Integer>(7));
-                this.y++;
-                this.x = 0;
+                y++;
+                x = 0;
             }
         }
     }
@@ -140,7 +140,7 @@ public class PolybusSq {
      * @param loc
      * @return
      */
-    public char getCharAt(Location loc) {
+    static char getCharAt(Location loc) {
         return (char) square.get(loc.getY()).get(loc.getY()).intValue();
     }
 
@@ -149,7 +149,7 @@ public class PolybusSq {
      * @param c
      * @return the Location of c
      */
-    public Location getLocationOf(char c) {
+    static Location getLocationOf(char c) {
         c = Character.toUpperCase(c);
         if (c == 'J') {
             c = 'I';
@@ -167,7 +167,7 @@ public class PolybusSq {
      * @param str
      * @return
      */
-    private String removeWhitespace(String str) {
+    private static String removeWhitespace(String str) {
         //TODO: remove whitespace
         String noWhite = "";
         for (int x = 0; x < str.length(); x++) {
@@ -178,10 +178,10 @@ public class PolybusSq {
         return noWhite;
     }
 
-    public void reset() {
+    static void reset() {
         square.clear();
-        this.x = 0;
-        this.y = 0;
+        x = 0;
+        y = 0;
     }
 
     /**
