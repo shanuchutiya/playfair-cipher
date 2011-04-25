@@ -67,8 +67,8 @@ public class PolybusSq {
      *
      * @param key
      */
-    static void setKey(String key) {
-        key = removeWhitespace(key.toUpperCase());
+    static void setKey(String keyWord) {
+        key = removeWhitespace(keyWord.toUpperCase());
         square.add(new ArrayList<Integer>(7));
         for (int z = 0; z < key.length(); z++) {
             boolean contains = false;
@@ -170,9 +170,9 @@ public class PolybusSq {
     private static String removeWhitespace(String str) {
         //TODO: remove whitespace
         String noWhite = "";
-        for (int x = 0; x < str.length(); x++) {
-            if (!Character.isWhitespace(str.charAt(x))) {
-                noWhite += str.charAt(x);
+        for (int z = 0; z < str.length(); z++) {
+            if (!Character.isWhitespace(str.charAt(z))) {
+                noWhite += str.charAt(z);
             }
         }
         return noWhite;
