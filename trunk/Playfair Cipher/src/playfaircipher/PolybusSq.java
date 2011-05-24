@@ -168,7 +168,6 @@ public class PolybusSq {
      * @return
      */
     private static String removeWhitespace(String str) {
-        //TODO: remove whitespace
         String noWhite = "";
         for (int z = 0; z < str.length(); z++) {
             if (!Character.isWhitespace(str.charAt(z))) {
