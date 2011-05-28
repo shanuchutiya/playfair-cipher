@@ -17,13 +17,6 @@ public class PolybusSq {
     private static int y;
     private static int x;
 
-    /*
-     * Make this a static class?
-     * Pro: no constructors, less memory, easier access...
-     *  (use PolybusSq.square instead of PolybusSq x = new PloybusSq())
-     * Con: We have to change it.
-     * Meh, fuck it. may as well, no harm right?
-     */
     /**
      * A B C D E
      * F G H I K
@@ -141,7 +134,22 @@ public class PolybusSq {
      * @return
      */
     static char getCharAt(Location loc) {
-        return (char) square.get(loc.getY()).get(loc.getY()).intValue();
+        checkLoc(loc);
+        return (char) square.get(loc.getY()).get(loc.getX()).intValue();
+    }
+
+    private static Location checkLoc(Location l) {
+        if (l.getY() >= 7) {
+            l.setY(0);
+        } else if (l.getY() < 0) {
+            l.setY(6);
+        }
+        if (l.getX() >= 7) {
+            l.setX(0);
+        } else if (l.getX() < 0){
+            l.setX(6);
+        }
+        return l;
     }
 
     /**

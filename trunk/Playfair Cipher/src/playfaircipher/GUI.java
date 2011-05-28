@@ -31,9 +31,6 @@ public class GUI extends GBFrame {
     private JButton decryptBtn;
     private final Font STD_FONT = new Font(Font.MONOSPACED, Font.PLAIN, 12);
     private final Font BOLD_FONT = new Font(Font.MONOSPACED, Font.BOLD, 12);
-    //creates a square with a key. feel free to remove... FOR TESTING
-    //PURPOSES
-    //private PolybusSq theSquare = new PolybusSq(/*"you goddamn motherfucking fuckng cunt?!"*/);
 
     public GUI() {
         //initializes square
@@ -71,17 +68,13 @@ public class GUI extends GBFrame {
     @Override
     public void buttonClicked(JButton jb) {
         if (jb == encryptBtn) {
-            PolybusSq.reset();
-            PolybusSq.setKey(getKey());
+            encryptedArea.setText(Cipher.encrypt(decryptedArea.getText(),
+                    getKey()));
             square.setText(PolybusSq.print());
-            //TODO: encrypt the message
-            //TODO: display ciphertext
         } else if (jb == decryptBtn) {
-            PolybusSq.reset();
-            PolybusSq.setKey(getKey());
+            decryptedArea.setText(Cipher.decrypt(encryptedArea.getText(),
+                    getKey()));
             square.setText(PolybusSq.print());
-            //TODO: decrypt the message
-            //TODO: display cleartext
         }
     }
 
