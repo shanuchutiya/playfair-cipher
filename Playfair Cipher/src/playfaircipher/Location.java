@@ -69,6 +69,14 @@ public class Location implements Comparable<Location> {
      * @return
      */
     public int compareTo(Location o) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if ((this.getX() == o.getX()) && (this.getY() == o.getY())) {
+            return 0;
+        } else if (this.getX() == o.getX()) {
+            return 1;
+        } else if (this.getY() == o.getY()) {
+            return 2;
+        } else {
+            return -1;
+        }
     }
 }
