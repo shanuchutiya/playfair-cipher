@@ -1,0 +1,1 @@
+Uses a modified Playfair cipher to encrypt/decrypt plaintext.
